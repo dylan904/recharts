@@ -402,7 +402,7 @@ export class CartesianAxis extends Component<Props> {
    * @return {ReactComponent} renderedTicks
    */
   renderTicks(ticks: CartesianTickItem[]) {
-    const { tickLine, stroke, tick, tickFormatter, unit } = this.props;
+    const { tickLine, color, tick, tickFormatter, unit } = this.props;
     const finalTicks = CartesianAxis.getTicks({ ...this.props, ticks });
     const textAnchor = this.getTickTextAnchor();
     const verticalAnchor = this.getTickVerticalAnchor();
@@ -420,7 +420,7 @@ export class CartesianAxis extends Component<Props> {
         verticalAnchor,
         ...axisProps,
         stroke: 'none',
-        fill: stroke,
+        fill: color,
         ...customTickProps,
         ...tickCoord,
         index: i,
